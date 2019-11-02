@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Form from "../components/form";
+import TriangleComponent from "../components/createTriangle";
 
 class Triangle extends Component {
   render() {
@@ -7,6 +8,7 @@ class Triangle extends Component {
       <div className="App">
         <text>Hello worlds</text>
         <Form />
+        <TriangleComponent />
       </div>
     );
   }
