@@ -7,8 +7,10 @@ const Form = props => {
         <label>
           <span> {props.name} </span>
           <input
+            name={props.name}
             type="number"
-            onChange={value => this.props.changeHandler(value.target.value)}
+            value={props.value}
+            onChange={props.onChange}
           />
         </label>
       </fieldset>
