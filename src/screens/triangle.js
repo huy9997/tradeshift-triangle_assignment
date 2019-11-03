@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Form from "../components/form";
 import TriangleComponent from "../components/triangleComponent";
 import Button from "../components/button";
+import checkTriangle from "../helperFunctions/checkTriangle";
+import DisplayTriangle from "../components/displayTriangle";
 class Triangle extends Component {
   constructor(props) {
     super(props);
@@ -16,26 +18,20 @@ class Triangle extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  checkTriangle = (left, right, bottom) => {
-    //equilateral, isosceles or scalene.
-
-    if (left === right && right === bottom) {
-      return "equalateral";
-    }
-    if (left === right || right === bottom || bottom === left) {
-      return "isosceles";
+  onsubmit = () => {
+    const { leftSide, rightSide, bottomSide } = this.state;
+    let check = checkTriangle(leftSide, rightSide, bottomSide);
+    if (check[0] === "error") {
+      this.setState({ type: check[1] });
     } else {
-      return "scalene";
+      this.setState({ type: check });
     }
-  };
-
-  onsubmit = e => {
-    return <TriangleComponent />;
   };
   render() {
-    const { leftSide, rightSide, bottomSide } = this.state;
+    const { leftSide, rightSide, bottomSide, type } = this.state;
+
     return (
-      <div className="App">
+      <div>
         <Form name="leftSide" onChange={this.changeHandler} value={leftSide} />
         <Form
           name="rightSide"
@@ -47,8 +43,9 @@ class Triangle extends Component {
           onChange={this.changeHandler}
           value={bottomSide}
         />
-        {this.onsubmit}
-        <Button name="Submit" onSubmit={this.onsubmit} />
+        <Button name="Submit" onClick={this.onsubmit} />
+        <DisplayTriangle />
+        {type}
       </div>
     );
   }

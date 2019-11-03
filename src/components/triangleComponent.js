@@ -1,20 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-const Arrow = styled.div`
+const Triangle = styled.div`
   width: 0;
   height: 0;
-  border-left: 120px solid transparent;
-  border-right: 60px solid transparent;
-
-  border-bottom: 60px solid black;
+  border-left: ${props => props.leftBorder} solid transparent;
+  border-right: ${props => props.rightBorder} solid transparent;
+  border-bottom: ${props => props.bottomBorder}solid black;
 `;
 
-const Triangle = props => {
+const TriangleComponent = props => {
   return (
-    <div>
-      <Arrow />
-    </div>
+    <Triangle
+      leftBorder={"100px"}
+      rightBorder={"100px"}
+      bottomBorder={"100px"}
+    />
   );
 };
-export default Triangle;
+export default TriangleComponent;
