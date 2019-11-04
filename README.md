@@ -12,6 +12,7 @@ Design
 
 ### Key points
 
+- used a react-express template I built and removed the things I did not need. (https://github.com/huy9997/React-Express-Template)
 - seperated as much html code in components as I can (example: broke up tradeshift ui html components)
 - keep in mind modularity and scalability to add features in the future and error testing
 - made a display of the triangle by passing in the input values to a css styled component to create a custom triangle
