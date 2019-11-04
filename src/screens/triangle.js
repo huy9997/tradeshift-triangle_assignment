@@ -23,7 +23,7 @@ class Triangle extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  onsubmit = () => {
+  onSubmit = () => {
     const { leftSide, rightSide, bottomSide } = this.state;
     let check = checkTriangle(leftSide, rightSide, bottomSide);
     if (check[0] === "error") {
@@ -31,6 +31,13 @@ class Triangle extends Component {
     } else {
       this.setState({ type: check });
     }
+  };
+  onTest = props => {
+    this.setState({
+      leftSide: props.leftSide,
+      rightSide: props.rightSide,
+      bottomSide: props.bottomSide
+    });
   };
   render() {
     const { leftSide, rightSide, bottomSide, type } = this.state;
@@ -48,13 +55,24 @@ class Triangle extends Component {
           onChange={this.changeHandler}
           value={bottomSide}
         />
-        <Button name="Submit" onClick={this.onsubmit} />
-        <TriangleComponent
-          leftPassValue={59}
-          rightPassValue={100}
-          bottomPassValue={100}
+        <Button name="Submit Values" onClick={this.onSubmit} />
+        <Button name="Scalene Test" onClick={() => this.onTest(SCALENE_DATA)} />
+        <Button
+          name="Equilateral Test"
+          onClick={() => this.onTest(EQUILATERAL_DATA)}
+        />
+        <Button
+          name="Isosceles Test"
+          onClick={() => this.onTest(ISOSCELES_DATA)}
         />
         {type}
+        {type[0] !== "error" && type !== "" && (
+          <TriangleComponent
+            leftPassValue={leftSide}
+            rightPassValue={rightSide}
+            bottomPassValue={bottomSide}
+          />
+        )}
       </div>
     );
   }

@@ -9,13 +9,20 @@ const Triangle = styled.div`
   border-bottom: ${props => props.bottomValue}px solid black;
 `;
 
+const MaxContainer = styled.div`
+  max-width: 100%;
+  max-height: 100%;
+`;
+
 const TriangleComponent = props => {
   return (
-    <Triangle
-      leftValue={props.leftPassValue}
-      rightValue={props.rightPassValue}
-      bottomValue={props.bottomPassValue}
-    />
+    <MaxContainer>
+      <Triangle
+        leftValue={props.leftPassValue}
+        rightValue={props.rightPassValue}
+        bottomValue={props.bottomPassValue}
+      />
+    </MaxContainer>
   );
 };
 export default TriangleComponent;

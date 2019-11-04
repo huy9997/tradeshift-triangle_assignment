@@ -1,17 +1,17 @@
 export const SCALENE_DATA = {
-  leftSide: 12,
-  rightSide: 5,
-  bottomSide: 6
+  leftSide: 120,
+  rightSide: 500,
+  bottomSide: 300
 };
 
 export const EQUILATERAL_DATA = {
-  leftSide: 10,
-  rightSide: 10,
-  bottomSide: 10
+  leftSide: 120,
+  rightSide: 120,
+  bottomSide: 120
 };
 
 export const ISOSCELES_DATA = {
-  leftSide: 10,
-  rightSide: 10,
-  bottomSide: 12
+  leftSide: 200,
+  rightSide: 200,
+  bottomSide: 100
 };
