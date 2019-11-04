@@ -3,6 +3,11 @@ import Form from "../components/form";
 import TriangleComponent from "../components/triangleComponent";
 import Button from "../components/button";
 import checkTriangle from "../helperFunctions/checkTriangle";
+import {
+  SCALENE_DATA,
+  EQUILATERAL_DATA,
+  ISOSCELES_DATA
+} from "../test/triangleTestData";
 
 class Triangle extends Component {
   constructor(props) {
@@ -44,7 +49,11 @@ class Triangle extends Component {
           value={bottomSide}
         />
         <Button name="Submit" onClick={this.onsubmit} />
-        <TriangleComponent />
+        <TriangleComponent
+          leftPassValue={59}
+          rightPassValue={100}
+          bottomPassValue={100}
+        />
         {type}
       </div>
     );

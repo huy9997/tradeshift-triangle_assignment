@@ -4,21 +4,18 @@ import styled from "styled-components";
 const Triangle = styled.div`
   width: 0;
   height: 0;
-  border-left: 100% solid transparent;
-  border-right: 100%  solid transparent;
-  border-bottom: 100% }solid black;
-`;
-const Container = styled.div`
-  width: 400px;
-  height: 400px;
-  background
+  border-left: ${props => props.leftValue}px solid transparent;
+  border-right: ${props => props.rightValue}px solid transparent;
+  border-bottom: ${props => props.bottomValue}px solid black;
 `;
 
 const TriangleComponent = props => {
   return (
-    <Container>
-      <Triangle />
-    </Container>
+    <Triangle
+      leftValue={props.leftPassValue}
+      rightValue={props.rightPassValue}
+      bottomValue={props.bottomPassValue}
+    />
   );
 };
 export default TriangleComponent;
