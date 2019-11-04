@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+
 import Form from "../components/form";
 import TriangleComponent from "../components/triangleComponent";
 import Button from "../components/button";
+
 import checkTriangle from "../helperFunctions/checkTriangle";
 import {
   SCALENE_DATA,
   EQUILATERAL_DATA,
   ISOSCELES_DATA
 } from "../test/triangleTestData";
-
 class Triangle extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +29,8 @@ class Triangle extends Component {
     let check = checkTriangle(leftSide, rightSide, bottomSide);
     if (check[0] === "error") {
       this.setState({ type: check[1] });
+    } else if (check[0] === "max") {
+      this.setState({ type: check });
     } else {
       this.setState({ type: check });
     }
@@ -66,7 +69,7 @@ class Triangle extends Component {
           onClick={() => this.onTest(ISOSCELES_DATA)}
         />
         {type}
-        {type[0] !== "error" && type !== "" && (
+        {type !== "" && type[0] !== "error" && (
           <TriangleComponent
             leftPassValue={leftSide}
             rightPassValue={rightSide}

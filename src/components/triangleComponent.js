@@ -7,22 +7,17 @@ const Triangle = styled.div`
   border-left: ${props => props.leftValue}px solid transparent;
   border-right: ${props => props.rightValue}px solid transparent;
   border-bottom: ${props => props.bottomValue}px solid black;
-`;
-
-const MaxContainer = styled.div`
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 700px;
+  max-height: 700px;
 `;
 
 const TriangleComponent = props => {
   return (
-    <MaxContainer>
-      <Triangle
-        leftValue={props.leftPassValue}
-        rightValue={props.rightPassValue}
-        bottomValue={props.bottomPassValue}
-      />
-    </MaxContainer>
+    <Triangle
+      leftValue={props.leftPassValue}
+      rightValue={props.rightPassValue}
+      bottomValue={props.bottomPassValue}
+    />
   );
 };
 export default TriangleComponent;
