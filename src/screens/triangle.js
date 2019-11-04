@@ -3,7 +3,7 @@ import Form from "../components/form";
 import TriangleComponent from "../components/triangleComponent";
 import Button from "../components/button";
 import checkTriangle from "../helperFunctions/checkTriangle";
-import DisplayTriangle from "../components/displayTriangle";
+
 class Triangle extends Component {
   constructor(props) {
     super(props);
@@ -44,7 +44,7 @@ class Triangle extends Component {
           value={bottomSide}
         />
         <Button name="Submit" onClick={this.onsubmit} />
-        <DisplayTriangle />
+        <TriangleComponent />
         {type}
       </div>
     );
