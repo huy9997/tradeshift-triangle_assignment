@@ -44,7 +44,13 @@ class Triangle extends Component {
   };
   render() {
     const { leftSide, rightSide, bottomSide, type } = this.state;
-
+    let conditionalRenderDisplay = type !== "" && type[0] !== "error" && (
+      <TriangleComponent
+        leftPassValue={leftSide}
+        rightPassValue={rightSide}
+        bottomPassValue={bottomSide}
+      />
+    );
     return (
       <div>
         <Form name="leftSide" onChange={this.changeHandler} value={leftSide} />
@@ -69,13 +75,7 @@ class Triangle extends Component {
           onClick={() => this.onTest(ISOSCELES_DATA)}
         />
         {type}
-        {type !== "" && type[0] !== "error" && (
-          <TriangleComponent
-            leftPassValue={leftSide}
-            rightPassValue={rightSide}
-            bottomPassValue={bottomSide}
-          />
-        )}
+        {conditionalRenderDisplay}
       </div>
     );
   }

@@ -29,3 +29,7 @@ Design
 - check values of Equalateral triangle by seeing if they are all equal
 - check values of Isosceles triangle by seeing if two sides are equal
 - check Scalene if it is valid input and not a Isosceles and Equalateral
+
+### Test Values
+
+- created test values by auto filling in data for each type
