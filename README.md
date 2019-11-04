@@ -10,13 +10,13 @@ run the project
 
 Design
 
-###Key points
+### Key points
 
 - seperated as much html code in components as I can (example: broke up tradeshift ui html components)
 - keep in mind modularity and scalability to add features in the future and error testing
 - made a display of the triangle by passing in the input values to a css styled component to create a custom triangle
 
-###error checking can be found in helper function
+### error checking can be found in helper function
 
 - make sure input is a number greater than 0
 - make sure input only contains numbers
@@ -24,7 +24,7 @@ Design
 
 -make sure the value is less than 700 px to prevent too large of a triangle
 
-###check triangles
+### check triangles
 
 - check values of Equalateral triangle by seeing if they are all equal
 - check values of Isosceles triangle by seeing if two sides are equal
